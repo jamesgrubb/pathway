@@ -143,14 +143,15 @@ const PathwayInteractive: React.FC = () => {
                         <div>
                           {/* Special layout for Step 3 with grouped icons and buttons */}
                           {step.id === 2 ? (
-                            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                            <div className="flex flex-row gap-4 sm:gap-6 justify-center items-center">
                               {/* Genetic factors group */}
                               <div className="flex flex-col items-center">
                                 <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-3 border-2 border-teal-200">
                                   <img src="/images/Brain_Injury.png" alt="Genetic factors" className="w-12 h-12" />
                                 </div>
-                                <button className="bg-lime-400 hover:bg-lime-500 text-teal-900 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors">
-                                  Genetic factors
+                                <button className="bg-lime-400 hover:bg-lime-500 text-teal-900 px-3 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-colors">
+                                  <span className="hidden sm:inline">Genetic factors</span>
+                                  <span className="sm:hidden">Genetic</span>
                                 </button>
                               </div>
                               
@@ -159,8 +160,9 @@ const PathwayInteractive: React.FC = () => {
                                 <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-3 border-2 border-teal-200">
                                   <img src="/images/Brain_Link.png" alt="Acquired factors" className="w-12 h-12" />
                                 </div>
-                                <button className="bg-white border border-slate-300 hover:border-teal-500 text-teal-900 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors">
-                                  Acquired factors
+                                <button className="bg-white border border-slate-300 hover:border-teal-500 text-teal-900 px-3 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-colors">
+                                  <span className="hidden sm:inline">Acquired factors</span>
+                                  <span className="sm:hidden">Acquired</span>
                                 </button>
                               </div>
                             </div>
