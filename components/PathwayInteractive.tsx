@@ -76,13 +76,13 @@ const PathwayInteractive: React.FC = () => {
         {/* Interactive Content */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           
-          {/* Left Column: Visualizer */}
-          <div className="order-2 lg:order-1 flex justify-center items-center bg-[#e0fbfe] rounded-3xl p-8 shadow-sm border border-slate-100 min-h-[400px] sticky top-24">
+          {/* Left Column: Visualizer - Desktop Only */}
+          <div className="hidden lg:flex justify-center items-center bg-[#e0fbfe] rounded-3xl p-8 shadow-sm border border-slate-100 min-h-[400px] sticky top-24">
             <ActiveVisualComponent />
           </div>
 
           {/* Right Column: Steps */}
-          <div className="order-1 lg:order-2 relative" ref={containerRef}>
+          <div className="lg:order-2 relative" ref={containerRef}>
             
             {/* Continuous Vertical Timeline Line */}
             <div className="absolute left-[1.5rem] sm:left-[2.5rem] top-10 bottom-10 w-0.5 bg-slate-200/80 rounded-full" />
@@ -124,6 +124,15 @@ const PathwayInteractive: React.FC = () => {
                     <p className={`text-sm leading-relaxed mb-4 transition-opacity duration-300 ${activeStep === index ? 'text-slate-600 opacity-100' : 'text-slate-500 opacity-0 h-0 overflow-hidden sm:h-auto sm:opacity-100 sm:overflow-visible'}`}>
                       {step.content}
                     </p>
+
+                    {/* Mobile Animation - Only show for active step on mobile */}
+                    {activeStep === index && (
+                      <div className="lg:hidden mb-6">
+                        <div className="bg-[#e0fbfe] rounded-2xl p-6 shadow-sm border border-slate-100">
+                          <step.VisualComponent />
+                        </div>
+                      </div>
+                    )}
 
                     {/* Buttons (Only show for active step) */}
                     <div className={`
