@@ -4,12 +4,8 @@ const Hero: React.FC = () => {
   return (
     <div className="relative bg-gradient-to-br from-teal-600 to-[#005f6b] overflow-hidden">
       {/* Abstract Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-           <path d="M0 100 L50 0 L100 100" fill="white" />
-           <circle cx="20" cy="50" r="30" fill="white" />
-           <rect x="60" y="20" width="40" height="40" transform="rotate(45 80 40)" fill="white" />
-        </svg>
+      <div className="w-full h-full absolute inset-0 opacity-10 bg-[url('/images/hero_background.png')] bg-cover bg-center">
+       
       </div>
       
       {/* Content */}

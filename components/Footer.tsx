@@ -48,11 +48,8 @@ const Footer: React.FC = () => {
 
             <div className="flex flex-col md:flex-row justify-between items-end gap-8 border-t border-teal-600 pt-8">
               <div className="flex items-center gap-4">
-                 <span className="text-xl font-semibold tracking-tight text-white">
-                   path<span className="text-lime-400 font-bold">4</span>HCPs
-                 </span>
-                 <div className="h-6 w-px bg-teal-500"></div>
-                 <span className="text-sm text-teal-200">Rhythm</span>
+                 <img src="/images/Logo_0n_Dark.png" alt="Logo" width={90} height={26} />
+                 <img src="/images/Rhythm.svg" alt="Rhythm Logo" width={90} height={24} />
               </div>
               <div className="text-[10px] text-teal-300 text-right">
                 <p>This information is provided by Rhythm Pharmaceuticals B.V. (eu_medinfo@rhythm.com). Last updated: August 2025</p>

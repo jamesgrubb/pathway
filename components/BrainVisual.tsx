@@ -3,9 +3,10 @@ import Lottie from 'lottie-react';
 
 interface BrainVisualProps {
   animationData: string | object;
+  loop?: boolean;
 }
 
-const BrainVisual: React.FC<BrainVisualProps> = ({ animationData }) => {
+const BrainVisual: React.FC<BrainVisualProps> = ({ animationData, loop = true }) => {
   const [lottieData, setLottieData] = useState<object | null>(null);
   const [error, setError] = useState<boolean>(false);
 
@@ -51,16 +52,17 @@ const BrainVisual: React.FC<BrainVisualProps> = ({ animationData }) => {
   }
 
   return (
-    <div className="relative w-full aspect-square max-w-md mx-auto flex items-center justify-center transition-all duration-700">
+    <div className="relative w-full aspect-square max-w-md mx-auto flex items-center justify-center transition-all duration-700 overflow-hidden" style={{ backgroundColor: 'transparent' }}>
       <Lottie 
         animationData={lottieData} 
-        loop={true} 
+        loop={loop} 
         autoplay={true}
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}
       />
       
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-teal-500/5 rounded-full blur-3xl -z-10 scale-75"></div>
+      {/* Enhanced background glow to match brain aesthetic */}
+      <div className="absolute inset-0 bg-gradient-radial from-teal-400/10 via-teal-300/5 to-transparent rounded-full blur-2xl -z-10"></div>
+      <div className="absolute inset-0 bg-teal-500/3 rounded-full blur-3xl -z-10 scale-75"></div>
     </div>
   );
 };

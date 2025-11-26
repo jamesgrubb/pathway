@@ -8,11 +8,9 @@ const Header: React.FC = () => {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+
           <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-             <span className="text-2xl font-semibold tracking-tight text-teal-700">
-               path<span className="text-lime-500 font-bold">4</span>HCPs
-             </span>
+            <img src="/images/Logo.png" alt="Logo" width={130} height={29} />
           </div>
 
           {/* Desktop Nav */}

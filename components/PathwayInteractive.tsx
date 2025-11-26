@@ -77,7 +77,7 @@ const PathwayInteractive: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Column: Visualizer */}
-          <div className="order-2 lg:order-1 flex justify-center items-center bg-white rounded-3xl p-8 shadow-sm border border-slate-100 min-h-[400px] sticky top-24">
+          <div className="order-2 lg:order-1 flex justify-center items-center bg-[#e0fbfe] rounded-3xl p-8 shadow-sm border border-slate-100 min-h-[400px] sticky top-24">
             <ActiveVisualComponent />
           </div>
 
