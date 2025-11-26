@@ -128,23 +128,46 @@ const PathwayInteractive: React.FC = () => {
                     {/* Buttons (Only show for active step) */}
                     <div className={`
                       overflow-hidden transition-all duration-500 ease-in-out
-                      ${activeStep === index ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'}
+                      ${activeStep === index ? 'max-h-60 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'}
                     `}>
                       {step.action && (
-                        <div className="flex flex-col sm:flex-row gap-3">
-                           <button className="bg-lime-400 hover:bg-lime-500 text-teal-900 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors">
-                             {step.id === 2 ? 'Genetic causes' : 'Find out how it works'}
-                           </button>
-                           {step.secondaryAction && (
-                             <button className="border border-slate-300 hover:border-teal-500 text-slate-600 hover:text-teal-700 px-6 py-2.5 rounded-full text-sm font-medium transition-colors">
-                               Learn more
-                             </button>
-                           )}
-                           {step.id === 2 && (
-                             <button className="bg-white border border-slate-300 hover:border-teal-500 text-teal-900 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors">
-                               Acquired causes
-                             </button>
-                           )}
+                        <div>
+                          {/* Special layout for Step 3 with grouped icons and buttons */}
+                          {step.id === 2 ? (
+                            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                              {/* Genetic factors group */}
+                              <div className="flex flex-col items-center">
+                                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-3 border-2 border-teal-200">
+                                  <img src="/images/Brain_Injury.png" alt="Genetic factors" className="w-12 h-12" />
+                                </div>
+                                <button className="bg-lime-400 hover:bg-lime-500 text-teal-900 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors">
+                                  Genetic factors
+                                </button>
+                              </div>
+                              
+                              {/* Acquired factors group */}
+                              <div className="flex flex-col items-center">
+                                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-3 border-2 border-teal-200">
+                                  <img src="/images/Brain_Link.png" alt="Acquired factors" className="w-12 h-12" />
+                                </div>
+                                <button className="bg-white border border-slate-300 hover:border-teal-500 text-teal-900 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors">
+                                  Acquired factors
+                                </button>
+                              </div>
+                            </div>
+                          ) : (
+                            /* Standard button layout for other steps */
+                            <div className="flex flex-col sm:flex-row gap-3">
+                               <button className="bg-lime-400 hover:bg-lime-500 text-teal-900 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors">
+                                 Find out how it works
+                               </button>
+                               {step.secondaryAction && (
+                                 <button className="border border-slate-300 hover:border-teal-500 text-slate-600 hover:text-teal-700 px-6 py-2.5 rounded-full text-sm font-medium transition-colors">
+                                   Learn more
+                                 </button>
+                               )}
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
